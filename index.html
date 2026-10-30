@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divyashree | MCA Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f7fb;
+      color: #26334a;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #101d36;
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #75c8ff;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #75c8ff;
+    }
+
+    .hero {
+      min-height: 440px;
+      padding: 100px 10%;
+      background: linear-gradient(120deg, #101d36, #203e69);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero p {
+      color: #a9c8e9;
+      font-size: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 60px);
+      margin: 10px 0;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      color: #75c8ff;
+      font-weight: 500;
+    }
+
+    .hero .intro {
+      max-width: 650px;
+      margin-top: 18px;
+      color: #e0e9f5;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      background: #75c8ff;
+      color: #101d36;
+      text-decoration: none;
+      padding: 11px 24px;
+      border-radius: 7px;
+      font-weight: bold;
+      width: fit-content;
+    }
+
+    section {
+      padding: 65px 10%;
+    }
+
+    section h2 {
+      color: #142849;
+      font-size: 30px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .underline {
+      width: 55px;
+      height: 4px;
+      background: #2699e6;
+      margin: -15px auto 30px;
+      border-radius: 5px;
+    }
+
+    .about {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .light {
+      background: white;
+    }
+
+    .education-card,
+    .project-card,
+    .course-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 18px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 18px rgba(20, 40, 73, 0.07);
+      border-left: 4px solid #2699e6;
+    }
+
+    .education-card h3,
+    .project-card h3,
+    .course-card h3 {
+      color: #17365e;
+      margin-bottom: 8px;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .skill {
+      background: #e4f2ff;
+      color: #17365e;
+      border: 1px solid #c7e5ff;
+      padding: 10px 19px;
+      border-radius: 25px;
+      font-weight: 600;
+    }
+
+    .project-card ul {
+      padding-left: 22px;
+      margin: 12px 0;
+    }
+
+    .tech {
+      margin-top: 15px;
+      color: #315d8a;
+      font-size: 14px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      color: #1479bd;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      background: #101d36;
+      color: #dce8f5;
+      text-align: center;
+      padding: 22px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      section {
+        padding: 48px 7%;
+      }
+
+      .hero {
+        padding: 75px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Divyashree.</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#courses">Courses</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <p>Hello, welcome to my portfolio!</p>
+    <h1>I'm Divyashree</h1>
+    <h2>Master of Computer Applications Student</h2>
+    <p class="intro">
+      I am passionate about technology, programming and learning
+      new skills. Welcome to my personal portfolio, where you can
+      explore my education, technical skills and projects.
+    </p>
+    <a class="btn" href="#projects">Explore My Projects</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="underline"></div>
+    <div class="about">
+      <p>
+        I am an MCA student at Poornaprajna Institute of Management
+        with an academic background in Computer Science and Mathematics.
+        I am interested in software development, databases and
+        application design. I enjoy exploring new technologies and
+        improving my technical knowledge through practical projects
+        and learning experiences.
+      </p>
+    </div>
+  </section>
+
+  <section class="light" id="education">
+    <h2>Education</h2>
+    <div class="underline"></div>
+
+    <div class="education-card">
+      <h3>Master of Computer Applications (MCA)</h3>
+      <p>Poornaprajna Institute of Management</p>
+      <p>Currently pursuing</p>
+    </div>
+
+    <div class="education-card">
+      <h3>Bachelor's Degree – Computer Science and Mathematics</h3>
+      <p>CGPA: 8.52</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="underline"></div>
+
+    <div class="skills">
+      <span class="skill">C</span>
+      <span class="skill">C++</span>
+      <span class="skill">Python</span>
+      <span class="skill">Java</span>
+      <span class="skill">SQL</span>
+      <span class="skill">MySQL</span>
+      <span class="skill">Android</span>
+      <span class="skill">PHP</span>
+    </div>
+  </section>
+
+  <section class="light" id="projects">
+    <h2>My Projects</h2>
+    <div class="underline"></div>
+
+    <div class="project-card">
+      <h3>01. GlowKart – Personalized Beauty Product Recommendation System</h3>
+
+      <p>
+        GlowKart is an online beauty shopping website that helps
+        customers discover beauty products based on their skin type.
+        Users can select Oily, Dry, Sensitive or Combination skin
+        and explore products suitable for their selection.
+      </p>
+
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li>User registration and login.</li>
+        <li>Skin-type-based product discovery.</li>
+        <li>Product search and product details.</li>
+        <li>Wishlist and shopping cart management.</li>
+        <li>User profile and order management.</li>
+        <li>Admin dashboard for managing products, users and orders.</li>
+        <li>Dark and light theme options.</li>
+      </ul>
+
+      <p class="tech">
+        <strong>Technologies:</strong> HTML5, CSS, JavaScript,
+        PHP, MySQL, XAMPP and phpMyAdmin.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>02. FOODTRUCK – Smart Food Delivery & Logistics Management System</h3>
+
+      <p>
+        FOODTRUCK is an Android-based food delivery and logistics
+        application that connects customers, restaurants and delivery
+        riders through a unified platform. Customers can browse
+        restaurants, order food and track deliveries in real time.
+        Restaurants can manage menus and incoming orders, while riders
+        can accept delivery requests, navigate using GPS and update
+        delivery status.
+      </p>
+
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li>Customer food ordering and live delivery tracking.</li>
+        <li>Restaurant menu and order management.</li>
+        <li>Rider delivery requests and GPS navigation.</li>
+        <li>Admin dashboard for managing the platform.</li>
+        <li>Smart rider allocation and batch delivery optimization.</li>
+        <li>Real-time order and location updates.</li>
+      </ul>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Java, XML, Android Studio,
+        Python FastAPI, SQLite, PostgreSQL/MySQL, Firebase,
+        Google Maps SDK, Google Location API, WebSockets and Retrofit.
+      </p>
+    </div>
+  </section>
+
+  <section id="courses">
+    <h2>Certifications & Courses</h2>
+    <div class="underline"></div>
+
+    <div class="course-card">
+      <h3>NPTEL – Cloud Computing</h3>
+      <p>Certificate received.</p>
+    </div>
+
+    <div class="course-card">
+      <h3>NPTEL – Natural Language Processing</h3>
+      <p>Course completed.</p>
+    </div>
+  </section>
+
+  <section class="light contact" id="contact">
+    <h2>Contact Me</h2>
+    <div class="underline"></div>
+
+    <p>Feel free to connect with me.</p>
+    <p style="margin-top: 15px;">
+      Email:
+      <a href="mailto:divyashree.mca.2025@pim.ac.in">
+        divyashree.mca.2025@pim.ac.in
+      </a>
+    </p>
+    <p style="margin-top: 10px;">
+      GitHub:
+      <a href="https://github.com/divyashree026" target="_blank">
+        github.com/divyashree026
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 Divyashree | Personal Portfolio</p>
+    <p>Designed with passion and creativity.</p>
+  </footer>
+
+</body>
+</html>
