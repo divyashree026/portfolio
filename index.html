@@ -2,395 +2,812 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divyashree | MCA Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Divyashree's personal portfolio">
+<title>Divyashree | MCA Portfolio</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<style>
+:root {
+  --navy: #172b4d;
+  --blue: #5276ad;
+  --soft: #eaf1fc;
+  --pale: #f6f8ff;
+  --white: #ffffff;
+  --text: #34435b;
+  --muted: #718096;
+  --border: #e2e9f4;
+  --shadow: 0 10px 30px rgba(34, 57, 92, 0.08);
+}
 
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f5f7fb;
-      color: #26334a;
-      line-height: 1.7;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    header {
-      background: #101d36;
-      color: white;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .logo {
-      font-size: 23px;
-      font-weight: bold;
-      color: #75c8ff;
-    }
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--pale);
+  color: var(--text);
+  line-height: 1.7;
+}
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    nav a:hover {
-      color: #75c8ff;
-    }
+/* Navigation */
 
-    .hero {
-      min-height: 440px;
-      padding: 100px 10%;
-      background: linear-gradient(120deg, #101d36, #203e69);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+header {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
 
-    .hero p {
-      color: #a9c8e9;
-      font-size: 18px;
-    }
+nav {
+  min-height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
 
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 60px);
-      margin: 10px 0;
-    }
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--navy);
+}
 
-    .hero h2 {
-      font-size: 24px;
-      color: #75c8ff;
-      font-weight: 500;
-    }
+.logo span {
+  color: var(--blue);
+}
 
-    .hero .intro {
-      max-width: 650px;
-      margin-top: 18px;
-      color: #e0e9f5;
-    }
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      background: #75c8ff;
-      color: #101d36;
-      text-decoration: none;
-      padding: 11px 24px;
-      border-radius: 7px;
-      font-weight: bold;
-      width: fit-content;
-    }
+.nav-links a {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
 
-    section {
-      padding: 65px 10%;
-    }
+.nav-links a:hover {
+  color: var(--blue);
+}
 
-    section h2 {
-      color: #142849;
-      font-size: 30px;
-      margin-bottom: 25px;
-      text-align: center;
-    }
+/* Hero */
 
-    .underline {
-      width: 55px;
-      height: 4px;
-      background: #2699e6;
-      margin: -15px auto 30px;
-      border-radius: 5px;
-    }
+.hero {
+  padding: 75px 0 55px;
+}
 
-    .about {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
+.hero-card {
+  background: linear-gradient(125deg, #e5edfb, #f3f6ff, #ffffff);
+  border: 1px solid #dce6f6;
+  border-radius: 30px;
+  padding: 65px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
 
-    .light {
-      background: white;
-    }
+.hero-card::after {
+  content: "";
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background: rgba(112, 148, 204, 0.13);
+  position: absolute;
+  right: -60px;
+  top: -80px;
+}
 
-    .education-card,
-    .project-card,
-    .course-card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      margin: 18px auto;
-      max-width: 900px;
-      box-shadow: 0 4px 18px rgba(20, 40, 73, 0.07);
-      border-left: 4px solid #2699e6;
-    }
+.hello {
+  display: inline-block;
+  background: white;
+  color: var(--blue);
+  padding: 7px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 
-    .education-card h3,
-    .project-card h3,
-    .course-card h3 {
-      color: #17365e;
-      margin-bottom: 8px;
-    }
+.hero h1 {
+  font-size: clamp(42px, 7vw, 65px);
+  color: var(--navy);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
 
-    .skills {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 13px;
-      max-width: 850px;
-      margin: auto;
-    }
+.hero h2 {
+  font-size: 22px;
+  color: var(--blue);
+  margin-bottom: 18px;
+}
 
-    .skill {
-      background: #e4f2ff;
-      color: #17365e;
-      border: 1px solid #c7e5ff;
-      padding: 10px 19px;
-      border-radius: 25px;
-      font-weight: 600;
-    }
+.hero p {
+  max-width: 650px;
+  color: #596a83;
+  font-size: 16px;
+}
 
-    .project-card ul {
-      padding-left: 22px;
-      margin: 12px 0;
-    }
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 28px;
+}
 
-    .tech {
-      margin-top: 15px;
-      color: #315d8a;
-      font-size: 14px;
-    }
+.btn {
+  padding: 11px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.3s;
+}
 
-    .contact {
-      text-align: center;
-    }
+.btn-primary {
+  background: var(--navy);
+  color: white;
+}
 
-    .contact a {
-      color: #1479bd;
-      text-decoration: none;
-      font-weight: 600;
-    }
+.btn-primary:hover {
+  background: var(--blue);
+  transform: translateY(-3px);
+}
 
-    footer {
-      background: #101d36;
-      color: #dce8f5;
-      text-align: center;
-      padding: 22px;
-      font-size: 14px;
-    }
+.btn-outline {
+  border: 1px solid #b8c9e3;
+  color: var(--navy);
+  background: white;
+}
 
-    @media (max-width: 650px) {
-      header {
-        justify-content: center;
-      }
+.btn-outline:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+}
 
-      nav {
-        justify-content: center;
-        gap: 12px;
-      }
+/* Common Sections */
 
-      section {
-        padding: 48px 7%;
-      }
+section {
+  padding: 38px 0 48px;
+  scroll-margin-top: 90px;
+}
 
-      .hero {
-        padding: 75px 7%;
-      }
-    }
-  </style>
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title span {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-title h2 {
+  color: var(--navy);
+  font-size: 34px;
+  margin-top: 5px;
+}
+
+.section-title p {
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(35,59,99,0.045);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* About */
+
+.about-text {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  color: #5d6d83;
+  font-size: 16px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.stat {
+  background: var(--soft);
+  padding: 18px;
+  border-radius: 17px;
+}
+
+.stat strong {
+  display: block;
+  color: var(--navy);
+  font-size: 22px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Education */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.info-card h3 {
+  color: var(--navy);
+  margin: 8px 0;
+  font-size: 19px;
+}
+
+.info-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.year {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* Skills */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.skill-box {
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 7px 20px rgba(35,59,99,0.04);
+}
+
+.skill-box h3 {
+  color: var(--navy);
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.tag {
+  background: var(--soft);
+  color: #365681;
+  padding: 6px 12px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+/* Projects */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-number {
+  background: var(--soft);
+  color: var(--blue);
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-weight: 800;
+}
+
+.project-type {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.project-card h3 {
+  color: var(--navy);
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.project-card .tags {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+/* Courses */
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.course {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.course-icon {
+  background: var(--soft);
+  color: var(--blue);
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.course h3 {
+  color: var(--navy);
+  font-size: 17px;
+}
+
+.course p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Contact */
+
+.contact-box {
+  background: linear-gradient(130deg, #172b4d, #3e6295);
+  border-radius: 25px;
+  padding: 42px 25px;
+  text-align: center;
+  color: white;
+}
+
+.contact-box h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.contact-box p {
+  color: #e2eafa;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 22px;
+}
+
+.contact-links a {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+footer {
+  text-align: center;
+  color: #8290a4;
+  padding: 30px 10px;
+  font-size: 13px;
+}
+
+/* Mobile */
+
+@media(max-width: 760px) {
+  nav {
+    padding: 15px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 12px 16px;
+  }
+
+  .hero {
+    padding: 35px 0;
+  }
+
+  .hero-card {
+    padding: 35px 25px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+  }
+
+  .grid-2,
+  .skills-grid,
+  .projects-grid,
+  .courses-grid,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title h2 {
+    font-size: 29px;
+  }
+}
+
+.fade-in {
+  animation: appear 0.8s ease both;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">Divyashree.</div>
-    <nav>
-      <a href="#home">Home</a>
+<header>
+  <nav class="container">
+    <a href="#home" class="logo">Divyashree<span>.</span></a>
+
+    <div class="nav-links">
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#courses">Courses</a>
       <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero" id="home">
-    <p>Hello, welcome to my portfolio!</p>
-    <h1>I'm Divyashree</h1>
-    <h2>Master of Computer Applications Student</h2>
-    <p class="intro">
-      I am passionate about technology, programming and learning
-      new skills. Welcome to my personal portfolio, where you can
-      explore my education, technical skills and projects.
-    </p>
-    <a class="btn" href="#projects">Explore My Projects</a>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="underline"></div>
-    <div class="about">
-      <p>
-        I am an MCA student at Poornaprajna Institute of Management
-        with an academic background in Computer Science and Mathematics.
-        I am interested in software development, databases and
-        application design. I enjoy exploring new technologies and
-        improving my technical knowledge through practical projects
-        and learning experiences.
-      </p>
     </div>
-  </section>
+  </nav>
+</header>
 
-  <section class="light" id="education">
+<main>
+
+<!-- HOME -->
+
+<section class="hero container" id="home">
+  <div class="hero-card fade-in">
+    <span class="hello">Welcome to my portfolio ✨</span>
+
+    <h1>Hello, I'm<br>Divyashree</h1>
+
+    <h2>MCA Student | Aspiring Software Developer</h2>
+
+    <p>
+      Welcome to my personal portfolio! I am passionate about technology,
+      software development and learning new skills through practical projects.
+    </p>
+
+    <div class="buttons">
+      <a href="#projects" class="btn btn-primary">Explore My Projects</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="container">
+  <div class="section-title">
+    <span>Get to know me</span>
+    <h2>About Me</h2>
+  </div>
+
+  <div class="card about-text">
+    <p>
+      I’m an MCA student with a B.Sc. in Computer Science and Mathematics,
+      skilled in Java, Python, C, C++, PHP, JavaScript and web development.
+      I have worked on web and application-based projects, including
+      GlowKart – a personalized beauty product recommendation system,
+      FOODTRUCK – a smart food delivery system, and a Student Database
+      Management System. I’m looking for an entry-level software developer
+      role where I can apply my skills and continue learning new technologies.
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <strong>MCA</strong>
+        <span>Currently Pursuing</span>
+      </div>
+
+      <div class="stat">
+        <strong>3</strong>
+        <span>Projects</span>
+      </div>
+
+      <div class="stat">
+        <strong>8.52</strong>
+        <span>B.Sc. CGPA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education" class="container">
+  <div class="section-title">
+    <span>My academic journey</span>
     <h2>Education</h2>
-    <div class="underline"></div>
+  </div>
 
-    <div class="education-card">
+  <div class="grid-2">
+
+    <div class="card info-card">
+      <span class="year">Expected 2027</span>
       <h3>Master of Computer Applications (MCA)</h3>
       <p>Poornaprajna Institute of Management</p>
-      <p>Currently pursuing</p>
+      <p>Currently pursuing postgraduate studies in Computer Applications.</p>
     </div>
 
-    <div class="education-card">
-      <h3>Bachelor's Degree – Computer Science and Mathematics</h3>
+    <div class="card info-card">
+      <span class="year">Undergraduate</span>
+      <h3>B.Sc. in Computer Science and Mathematics</h3>
       <p>CGPA: 8.52</p>
     </div>
-  </section>
 
-  <section id="skills">
+  </div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills" class="container">
+  <div class="section-title">
+    <span>My technical toolkit</span>
     <h2>Technical Skills</h2>
-    <div class="underline"></div>
+    <p>Technologies and tools I have learned and used.</p>
+  </div>
 
-    <div class="skills">
-      <span class="skill">C</span>
-      <span class="skill">C++</span>
-      <span class="skill">Python</span>
-      <span class="skill">Java</span>
-      <span class="skill">SQL</span>
-      <span class="skill">MySQL</span>
-      <span class="skill">Android</span>
-      <span class="skill">PHP</span>
+  <div class="skills-grid">
+
+    <div class="skill-box">
+      <h3>Programming Languages</h3>
+      <div class="tags">
+        <span class="tag">C</span>
+        <span class="tag">C++</span>
+        <span class="tag">Java</span>
+        <span class="tag">Python</span>
+      </div>
     </div>
-  </section>
 
-  <section class="light" id="projects">
+    <div class="skill-box">
+      <h3>Web Technologies</h3>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">PHP</span>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <h3>Database & Development</h3>
+      <div class="tags">
+        <span class="tag">SQL</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">SQLite3</span>
+        <span class="tag">Android</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects" class="container">
+  <div class="section-title">
+    <span>What I've worked on</span>
     <h2>My Projects</h2>
-    <div class="underline"></div>
+    <p>A few projects that reflect my learning and development journey.</p>
+  </div>
 
-    <div class="project-card">
-      <h3>01. GlowKart – Personalized Beauty Product Recommendation System</h3>
+  <div class="projects-grid">
 
-      <p>
-        GlowKart is an online beauty shopping website that helps
-        customers discover beauty products based on their skin type.
-        Users can select Oily, Dry, Sensitive or Combination skin
-        and explore products suitable for their selection.
-      </p>
+    <!-- PROJECT 1 -->
 
-      <p><strong>Key Features:</strong></p>
-      <ul>
-        <li>User registration and login.</li>
-        <li>Skin-type-based product discovery.</li>
-        <li>Product search and product details.</li>
-        <li>Wishlist and shopping cart management.</li>
-        <li>User profile and order management.</li>
-        <li>Admin dashboard for managing products, users and orders.</li>
-        <li>Dark and light theme options.</li>
-      </ul>
+    <div class="card project-card">
+      <div class="project-top">
+        <span class="project-number">01</span>
+        <span class="project-type">Web Application</span>
+      </div>
 
-      <p class="tech">
-        <strong>Technologies:</strong> HTML5, CSS, JavaScript,
-        PHP, MySQL, XAMPP and phpMyAdmin.
-      </p>
-    </div>
-
-    <div class="project-card">
-      <h3>02. FOODTRUCK – Smart Food Delivery & Logistics Management System</h3>
+      <h3>GlowKart – Personalized Beauty Product Recommendation System</h3>
 
       <p>
-        FOODTRUCK is an Android-based food delivery and logistics
-        application that connects customers, restaurants and delivery
-        riders through a unified platform. Customers can browse
-        restaurants, order food and track deliveries in real time.
-        Restaurants can manage menus and incoming orders, while riders
-        can accept delivery requests, navigate using GPS and update
-        delivery status.
+        An online beauty shopping website where users can explore skincare
+        and makeup products. Its key feature allows users to select their
+        skin type — oily, dry, sensitive or combination — and view products
+        listed for that skin type. It also includes shopping features such
+        as wishlist and cart, along with an admin area for managing products
+        and orders.
       </p>
 
-      <p><strong>Key Features:</strong></p>
-      <ul>
-        <li>Customer food ordering and live delivery tracking.</li>
-        <li>Restaurant menu and order management.</li>
-        <li>Rider delivery requests and GPS navigation.</li>
-        <li>Admin dashboard for managing the platform.</li>
-        <li>Smart rider allocation and batch delivery optimization.</li>
-        <li>Real-time order and location updates.</li>
-      </ul>
+      <div class="tags">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">PHP</span>
+        <span class="tag">MySQL</span>
+      </div>
+    </div>
 
-      <p class="tech">
-        <strong>Technologies:</strong> Java, XML, Android Studio,
-        Python FastAPI, SQLite, PostgreSQL/MySQL, Firebase,
-        Google Maps SDK, Google Location API, WebSockets and Retrofit.
+    <!-- PROJECT 2 -->
+
+    <div class="card project-card">
+      <div class="project-top">
+        <span class="project-number">02</span>
+        <span class="project-type">Android Application</span>
+      </div>
+
+      <h3>FOODTRUCK – Smart Food Delivery & Logistics Management System</h3>
+
+      <p>
+        An Android-based food delivery and logistics management application
+        designed to connect customers, restaurants and delivery riders.
+        The system is designed to support food ordering, restaurant order
+        management, rider delivery updates and location-based tracking,
+        with an admin module for platform management.
       </p>
+
+      <div class="tags">
+        <span class="tag">Java</span>
+        <span class="tag">XML</span>
+        <span class="tag">Android Studio</span>
+        <span class="tag">Python FastAPI</span>
+        <span class="tag">Firebase</span>
+        <span class="tag">Google Maps</span>
+      </div>
     </div>
-  </section>
 
-  <section id="courses">
-    <h2>Certifications & Courses</h2>
-    <div class="underline"></div>
+    <!-- PROJECT 3 -->
 
-    <div class="course-card">
-      <h3>NPTEL – Cloud Computing</h3>
-      <p>Certificate received.</p>
+    <div class="card project-card">
+      <div class="project-top">
+        <span class="project-number">03</span>
+        <span class="project-type">Web Application</span>
+      </div>
+
+      <h3>Student Database Management System</h3>
+
+      <p>
+        A web-based student record management system with admin-only login
+        using three predefined username and password pairs. The administrator
+        can add, view, update and delete student details through a simple
+        interface.
+      </p>
+
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Python</span>
+        <span class="tag">SQLite3</span>
+      </div>
     </div>
 
-    <div class="course-card">
-      <h3>NPTEL – Natural Language Processing</h3>
-      <p>Course completed.</p>
+  </div>
+</section>
+
+<!-- COURSES -->
+
+<section id="courses" class="container">
+  <div class="section-title">
+    <span>Learning and growth</span>
+    <h2>Courses & Certifications</h2>
+  </div>
+
+  <div class="courses-grid">
+
+    <div class="card course">
+      <span class="course-icon">NPTEL</span>
+      <div>
+        <h3>Cloud Computing</h3>
+        <p>NPTEL – Certificate received.</p>
+      </div>
     </div>
-  </section>
 
-  <section class="light contact" id="contact">
-    <h2>Contact Me</h2>
-    <div class="underline"></div>
+    <div class="card course">
+      <span class="course-icon">NPTEL</span>
+      <div>
+        <h3>Natural Language Processing</h3>
+        <p>NPTEL – Course completed.</p>
+      </div>
+    </div>
 
-    <p>Feel free to connect with me.</p>
-    <p style="margin-top: 15px;">
-      Email:
-      <a href="mailto:divyashree.mca.2025@pim.ac.in">
-        divyashree.mca.2025@pim.ac.in
-      </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="container">
+  <div class="contact-box">
+    <h2>Let's Connect! 💙</h2>
+
+    <p>
+      Thank you for visiting my portfolio.
+      Feel free to connect with me.
     </p>
-    <p style="margin-top: 10px;">
-      GitHub:
-      <a href="https://github.com/divyashree026" target="_blank">
-        github.com/divyashree026
-      </a>
-    </p>
-  </section>
 
-  <footer>
-    <p>© 2026 Divyashree | Personal Portfolio</p>
-    <p>Designed with passion and creativity.</p>
-  </footer>
+    <div class="contact-links">
+      <a href="mailto:divyashree.mca.2025@pim.ac.in">Email Me</a>
+      <a href="https://github.com/divyashree026"
+         target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Divyashree | Designed with 💙
+</footer>
 
 </body>
 </html>
